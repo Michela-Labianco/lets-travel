@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+    <header class="mb-5">
+        <nav class="navbar navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container my-2">
+                <a class="navbar-brand ml-4" href="#">Let's Travel</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/">Home</a> <!--slash sign to redirect the user to the main page of our website-->
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" aria-current="page" href="#">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/admin">Admin Page</a>
+                        </li>
+                        <!--The file of the admin page has to be stored in a folder called admin.
+                        That's why we said /admin as the value of the Asraf attribute.-->
+                    </ul>
+                    <form class="d-flex call-me-form" role="call-me">
+                        <input class="form-control me-2" type="tel" placeholder="Phone number" aria-label="Phone number">
+                        <button class="btn btn-outline-light text-nowrap" type="submit">Call me</button>
+                    </form>
+                    <!--to log out-->
+                    <button class="log-out-btn btn btn-outline-secondary ms-2">Log out</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container shadow p-3 mb-5 bg-body-tertiary rounded"> <!--Instead of using CSS you can also use utilities (bootstrap)-->
+            <h1 class="text-center">Admin Page</h1> <!--section text in the utilities-->
+            <hr> <!--for the orizontal line after the title-->
+            <div class="d-flex align-items-start">
+                <!--section borders and sizing in the utilities-->
+                <div class="nav flex-column nav-pills me-3 border rounded w-25 p-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link active" id="v-pills-articles-tab" data-bs-toggle="pill" data-bs-target="#v-pills-articles" type="button" role="tab" aria-controls="v-pills-aricles" aria-selected="true">Articles</button>
+                    <button class="nav-link" id="v-pills-mails-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mails" type="button" role="tab" aria-controls="v-pills-mails" aria-selected="false">Mails</button>
+                    <button class="nav-link" id="v-pills-callback-tab" data-bs-toggle="pill" data-bs-target="#v-pills-callback" type="button" role="tab" aria-controls="v-pills-callback" aria-selected="false">Callback Requests</button>
+                    <button class="nav-link d-none" id="v-pills-add-post-tab" data-bs-toggle="pill" data-bs-target="#v-pills-add-post" type="button" role="tab" aria-controls="v-pills-add-post" aria-selected="false">Create Post</button>
+                    <button class="nav-link d-none" id="v-pills-update-post-tab" data-bs-toggle="pill" data-bs-target="#v-pills-update-post" type="button" role="tab" aria-controls="v-pills-update-post" aria-selected="false">Update Post</button>
+                    <!--d-none to make it display none-->
+                </div>
+                <!--section borders and sizing (to fix the width set by the width of the content) in the utilities-->
+                <div class="tab-content border rounded w-75 p-3" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-articles" role="tabpanel" aria-labelledby="v-pills-articles-tab" tabindex="0">
+                        <button class="add-post btn btn-primary mb-3">Add post</button>
+                        <table class="articles-list table table-striped">
+                            <tbody>
+                        <!-- DON'T NEED THIS ANYMORE BECAUSE OF MAIN.JS IN THE ADMIN/JS FOLDER
+                        all posts have to be stored in the database and then automatically displayed on theadmin page.
+                        <tr>
+                            <td>1</td>
+                            <td>Eiffel Tower</td>
+                            <td>2033-Nov-11</td>
+                            <td>France</td>
+                            <td><button type="button" class="btn btn-link p-0 text-decoration-none">Edit</button></td>
+                            <td><button type="button" class="btn btn-link p-0 text-decoration-none">X</button></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Sydney Opera House</td>
+                            <td>2033-Nov-11</td>
+                            <td>Australia</td>
+                            <td><button type="button" class="btn btn-link p-0 text-decoration-none">Edit</button></td>
+                            <td><button type="button" class="btn btn-link p-0 text-decoration-none">X</button></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Statue of Liberty</td>
+                            <td>2033-Nov-11</td>
+                            <td>USA</td>
+                            <td><button type="button" class="btn btn-link p-0 text-decoration-none">Edit</button></td>
+                            <td><button type="button" class="btn btn-link p-0 text-decoration-none">X</button></td>
+                        </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-mails" role="tabpanel" aria-labelledby="v-pills-mails-tab" tabindex="0">
+                        <table class="table table-striped">
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-callback" role="tabpanel" aria-labelledby="v-pills-callback-tab" tabindex="0">
+                        <table class="table table-striped">
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-add-post" role="tabpanel" aria-labelledby="v-pills-add-post-tab" tabindex="0">
+                        <h1>Create Post</h1> <!--not showing because only the class with show active is visible-->
+                        <form class="create-post-form">
+                            <div class="mb-3">
+                                <label for="title" class="mb-1">Title</label>
+                                <input type="text" id="title" class="form-control" placeholder="Title">
+                            </div>
+                            <div class="mb-3">
+                                <label for="country" class="mb-1">Country</label>
+                                <input type="text" id="country" class="form-control" placeholder="Country">
+                            </div>
+                            <div class="mb-3">
+                                <label for="imageURL" class="mb-1">Image</label>
+                                <input type="url" id="imageURL" class="form-control" placeholder="URL">
+                            </div>
+                            <div class="mb-3">
+                                <label for="image-file" class="mb-1">or</label>
+                                <input type="file" id="image-file" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="text" class="mb-1">Text</label>
+                                <textarea id="text" cols="10" rows="10" class="form-control"></textarea>
+                            </div>
+                            <button class="btn btn-primary" type="submit">Create Post</button>
+                        </form>
+                    </div>
+                    <!--UPDATE FORM-->
+                    <div class="tab-pane fade" id="v-pills-update-post" role="tabpanel" aria-labelledby="v-pills-update-post-tab" tabindex="0">
+                        <h1>Update Post</h1> <!--not showing because only the class with show active is visible-->
+                        <form class="update-post-form">
+                            <div class="mb-3">
+                                <label for="update-title" class="mb-1">Title</label>
+                                <input type="text" id="update-title" class="form-control" placeholder="Title">
+                            </div>
+                            <!-- <div class="mb-3">
+                                <label for="update-image-file" class="mb-1">or</label>
+                                <input type="file" id="update-image-file" class="form-control">
+                            </div> -->
+                            <div class="mb-3">
+                                <label for="update-text" class="mb-1">Text</label>
+                                <textarea id="update-text" cols="10" rows="10" class="form-control"></textarea>
+                            </div>
+                            <button class="btn btn-primary" type="submit">Update Post</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="navbar navbar navbar-expand-lg bg-body-tertiary mt-5" data-bs-theme="dark">
+        <div class="container my-2">
+            <p class="copy mb-0" style="color: #656363;">&copy; 2033, All right deserved</p>
+            <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#contact-us">Contact us</button>
+        </div>  
+    </footer>
+    <div class="modal fade" id="contact-us" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Contact us</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="contact-us-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Write your name" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" placeholder="Write your Email address" id="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contact-us-modal">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.min.js"></script> <!-- / so the server will understand that we mean the folder call client-side.-->
+    <script src="/admin/js/create-post.js"></script> <!--to connect the file to the admin page before main.js file-->
+    <script src="/admin/js/delete-post.js"></script> <!--to connect the file to the admin page before main.js file-->
+    <script src="/admin/js/update-post.js"></script> <!--to connect the file to the admin page before main.js file-->
+    <script src="/admin/js/main.js"></script> <!--to connect the file to the admin page-->
+</body>
+</html>
