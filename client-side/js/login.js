@@ -9,7 +9,7 @@ signInForm.addEventListener('submit', function(e){
     let password = document.querySelector('#sign-in-password').value;
     //for the front end part, 
     //already found the email and password for the sign in form and now we can call the fetch function
-    fetch('http://localhost:3000/users/login', { //in () we specify the requested URL
+    fetch('/users/login', { //in () we specify the requested URL
         method: 'POST',
         headers: {
             'Content-type' : 'application/json' //send the json object
@@ -47,7 +47,7 @@ registerForm.addEventListener('submit', function(e){
     if(password !== rePassword) { //if is not equal
         return; //to stop the event handler immediately
     }
-    fetch('http://localhost:3000/users/register', { //in () we specify the requested URL
+    fetch('/users/register', { //in () we specify the requested URL
         method: 'POST',
         headers: {
             'Content-type' : 'application/json'

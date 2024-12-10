@@ -2,7 +2,7 @@
 //here we add posts to the main page
 
 async function getPosts(){
-    return await fetch('http://localhost:3000/posts') //in () we specify the requested URL
+    return await fetch('/posts') //in () we specify the requested URL
     .then((response) => response.json()) //converted in json (readable) format
     .then((data) => data);
 }
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async function(){
 callMeForm.addEventListener('submit', function(e){
     e.preventDefault();
     let phoneInput = callMeForm.querySelector('input'); //because inside the .call-me-form there is only one input
-    fetch('http://localhost:3000/callbacks-requests', { //to make a post request to the server
+    fetch('http://:3000/callbacks-requests', { //to make a post request to the server
         method: 'POST', //is the post method
         headers: {
             'Content-type' : 'application/json'
@@ -57,7 +57,7 @@ callMeForm.addEventListener('submit', function(e){
 let emailsForm = document.querySelector('.contact-us-form'); //to find it by his class name
 emailsForm.addEventListener('submit', function(e){
     e.preventDefault();
-    fetch('http://localhost:3000/emails', { //to make a request to the server
+    fetch('http://:3000/emails', { //to make a request to the server
         method: 'POST', //is the post method
         headers: {
             'Content-type' : 'application/json'
