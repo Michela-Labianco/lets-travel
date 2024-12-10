@@ -52,7 +52,9 @@ app.set('view engine', 'ejs'); //first argument -> we specify that we use the to
 
 
 //to connect it to the database
-mongoose.connect('mongodb+srv://michelalabianco1993:SfqiTvWEOckZwlCZ@mycluster.iko6f.mongodb.net/travels');
+let username = process.env.mongoUserName;
+let password = process.env.mongoUserPassword;
+mongoose.connect(`mongodb+srv://${username}:${password}@mycluster.iko6f.mongodb.net/travels`);
 //mongoose.connect('mongodb://localhost/travels'); //travels is the name of the database
 //create-post.js
 app.use(express.json());//***

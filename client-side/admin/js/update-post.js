@@ -28,7 +28,7 @@
 
             //here we only assign the value to the id variable
             id = e.target.parentNode.parentNode.querySelector('.id').value; //to search for this id
-            let postInfo = await fetch('/posts/' +id)
+            let postInfo = await fetch('https://lets-travel-es6w.onrender.com/posts/' +id)
                 //for the get request we don't to specify with method
                 .then((response) => response.json())
                 .then((data) => data) //So the data is returned from the => function.
@@ -60,7 +60,7 @@
         //     updateImage === imageFile;
         // }
 
-        fetch('/posts/' +id, {
+        fetch('https://lets-travel-es6w.onrender.com/posts/' +id, {
             method: 'PUT', //we specify that it is a put request
             headers: {
                 'Content-Type': 'application/json' //we specify that we send the data to the server in the Json format

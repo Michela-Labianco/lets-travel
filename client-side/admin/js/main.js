@@ -7,7 +7,7 @@ async function getPosts() {
     //the getPosts() function --> a synchronous function, which means that it doesn't wait for the result from the fetch function
     //So we use async await to make it so that the getPosts() function waits for a result from the fetch function.
     //in () we specify the requested URL (in the back and part, we specified that the route path is /posts, so in the front in part, we need to use the same route path)
-    return await fetch('/posts')
+    return await fetch('https://lets-travel-es6w.onrender.com/posts')
     //return --> to be able to use this data outside of the getPosts() function
         .then((response) => response.json()) //after getting the response we need to converted in json (readable) format
         .then((data) => data);
@@ -15,7 +15,7 @@ async function getPosts() {
 
 
 async function getRequest() {
-    return await fetch('/callbacks-requests')
+    return await fetch('https://lets-travel-es6w.onrender.com/callbacks-requests')
     //return --> to be able to use this data outside of the function
         .then((response) => response.json()) 
         .then((data) => data);
@@ -24,7 +24,7 @@ async function getRequest() {
 //this way the post are received from the database and then they are inserted into the admin page 
 
 async function getEmailRequest() {
-    return await fetch('/emails')
+    return await fetch('https://lets-travel-es6w.onrender.com/emails')
     //return --> to be able to use this data outside of the function
         .then((response) => response.json()) 
         .then((data) => data);
@@ -155,7 +155,7 @@ let callMeFormAdmin = document.querySelector('.call-me-form'); //to find the for
 callMeFormAdmin.addEventListener('submit', function(e){
     e.preventDefault();
     let phoneInput = callMeFormAdmin.querySelector('input'); //because inside the .call-me-form there is only one input
-    fetch('/callbacks-requests', { //to make a post request to the server
+    fetch('https://lets-travel-es6w.onrender.com/callbacks-requests', { //to make a post request to the server
         method: 'POST', //is the post method
         headers: {
             'Content-type' : 'application/json'
@@ -173,7 +173,7 @@ let callbackBlock = document.querySelector('#v-pills-callback');
 callbackBlock.addEventListener('click', function(e){
     if(e.target.classList.contains('remove-btn')){
         let id = e.target.parentNode.parentNode.querySelector('.id').value;
-        fetch('/callbacks-requests/' + id, {
+        fetch('https://lets-travel-es6w.onrender.com/callbacks-requests/' + id, {
             method: 'DELETE'
         }).then((response) => response.text()).then(() => alert("Request deleted"))
         .then(() => window.history.go());
@@ -185,7 +185,7 @@ callbackBlock.addEventListener('click', function(e){
 let emailsFormAdmin = document.querySelector('.contact-us-form'); //to find it by his class name
 emailsFormAdmin.addEventListener('submit', function(e){
     e.preventDefault();
-    fetch('/emails', { //to make a post request to the server
+    fetch('https://lets-travel-es6w.onrender.com/emails', { //to make a post request to the server
         method: 'POST', //is the post method
         headers: {
             'Content-type' : 'application/json'
@@ -207,7 +207,7 @@ let emailsBlock = document.querySelector('#v-pills-mails');
 emailsBlock.addEventListener('click', function(e){
     if(e.target.classList.contains('remove-btn')){
         let id = e.target.parentNode.parentNode.querySelector('.id').value;
-        fetch('/emails/' + id, {
+        fetch('https://lets-travel-es6w.onrender.com/emails/' + id, {
             method: 'DELETE'
         }).then((response) => response.text()).then(() => alert("Request deleted"))
         .then(() => window.history.go());
