@@ -42,7 +42,7 @@ createForm.addEventListener('submit', function(e) {
     //to send all this data we have to change the value for body -> body : data
 
 
-    fetch('https://lets-travel-es6w.onrender.com/posts', { //in () we specify the requested URL
+    fetch('/posts', { //in () we specify the requested URL
         method: 'POST', //is the post method
         // don't need the headers because it was used for json format
         //headers: {

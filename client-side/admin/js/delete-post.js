@@ -23,7 +23,7 @@ to implement event delegation we need to attach the event handler to the HTML el
         //.querySelector('.id').value ->  which is our input with the class id and we add value because we only need the value
             
         // to do is delete the post with this I.D. number from the database:
-            fetch('https://lets-travel-es6w.onrender.com/posts/' + id, {
+            fetch('/posts/' + id, {
                 method: 'DELETE'
             }).then((response) => response.text())
             .then(() => window.history.go()); // then we redirect the client to the main page of the admin page. 
