@@ -15,7 +15,7 @@ async function getPosts() {
 
 
 async function getRequest() {
-    return await fetch('/callbacks-requests')
+    return await fetch('/callback-requests')
     //return --> to be able to use this data outside of the function
         .then((response) => response.json()) 
         .then((data) => data);
@@ -155,7 +155,7 @@ let callMeFormAdmin = document.querySelector('.call-me-form'); //to find the for
 callMeFormAdmin.addEventListener('submit', function(e){
     e.preventDefault();
     let phoneInput = callMeFormAdmin.querySelector('input'); //because inside the .call-me-form there is only one input
-    fetch('/callbacks-requests', { //to make a post request to the server
+    fetch('/callback-requests', { //to make a post request to the server
         method: 'POST', //is the post method
         headers: {
             'Content-type' : 'application/json'
@@ -173,7 +173,7 @@ let callbackBlock = document.querySelector('#v-pills-callback');
 callbackBlock.addEventListener('click', function(e){
     if(e.target.classList.contains('remove-btn')){
         let id = e.target.parentNode.parentNode.querySelector('.id').value;
-        fetch('/callbacks-requests/' + id, {
+        fetch('/callback-requests/' + id, {
             method: 'DELETE'
         }).then((response) => response.text()).then(() => alert("Request deleted"))
         .then(() => window.history.go());

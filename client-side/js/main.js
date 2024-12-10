@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async function(){
 callMeForm.addEventListener('submit', function(e){
     e.preventDefault();
     let phoneInput = callMeForm.querySelector('input'); //because inside the .call-me-form there is only one input
-    fetch('/callbacks-requests', { //to make a post request to the server
+    fetch('/callback-requests', { //to make a post request to the server
         method: 'POST', //is the post method
         headers: {
             'Content-type' : 'application/json'
