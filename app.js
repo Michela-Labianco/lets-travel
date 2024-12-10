@@ -52,7 +52,8 @@ app.set('view engine', 'ejs'); //first argument -> we specify that we use the to
 
 
 //to connect it to the database
-mongoose.connect('mongodb://localhost/travels'); //travels is the name of the database
+mongoose.connect('mongodb+srv://michelalabianco1993:SfqiTvWEOckZwlCZ@mycluster.iko6f.mongodb.net/travels');
+//mongoose.connect('mongodb://localhost/travels'); //travels is the name of the database
 //create-post.js
 app.use(express.json());//***
 
@@ -240,7 +241,8 @@ app.get('/login', (request,response)=> {
 /*To recap: when the request is made to the route path /admin and isLoggedIn is false, then the user is redirected to the sign in page.
 And this route displays the sign in page.*/
 
-app.listen(3000, () => console.log('Listening 3000...'));
+let port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Listening ${port}...`));
 
 
 //how to display the information from the database on the admin page.
