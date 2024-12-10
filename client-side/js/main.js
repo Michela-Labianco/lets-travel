@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async function(){
 callMeForm.addEventListener('submit', function(e){
     e.preventDefault();
     let phoneInput = callMeForm.querySelector('input'); //because inside the .call-me-form there is only one input
-    fetch('http://:3000/callbacks-requests', { //to make a post request to the server
+    fetch('/callbacks-requests', { //to make a post request to the server
         method: 'POST', //is the post method
         headers: {
             'Content-type' : 'application/json'
@@ -57,7 +57,7 @@ callMeForm.addEventListener('submit', function(e){
 let emailsForm = document.querySelector('.contact-us-form'); //to find it by his class name
 emailsForm.addEventListener('submit', function(e){
     e.preventDefault();
-    fetch('http://:3000/emails', { //to make a request to the server
+    fetch('/emails', { //to make a request to the server
         method: 'POST', //is the post method
         headers: {
             'Content-type' : 'application/json'
